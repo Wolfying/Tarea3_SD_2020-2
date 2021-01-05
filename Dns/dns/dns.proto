@@ -3,7 +3,7 @@ package dns;
 option go_package = "Dns/dns";
 
 service DnsHandler {
-    rpc GetDomainIp (stream inmessage) returns (stream response){}
+    rpc GetDomain (stream inmessage) returns (stream response){}
 }
 
 message inmessage{

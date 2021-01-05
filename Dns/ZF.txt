@@ -1,0 +1,1 @@
+www.example.com IN A 92.346.23.10

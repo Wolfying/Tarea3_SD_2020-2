@@ -126,12 +126,12 @@ var file_dns_proto_rawDesc = []byte{
 	0x07, 0x64, 0x6f, 0x6d, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
 	0x64, 0x6f, 0x6d, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x1a, 0x0a, 0x08, 0x72, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x70, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x02, 0x69, 0x70, 0x32, 0x40, 0x0a, 0x0a, 0x44, 0x6e, 0x73, 0x48, 0x61, 0x6e, 0x64, 0x6c, 0x65,
-	0x72, 0x12, 0x32, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x44, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x49, 0x70,
-	0x12, 0x0e, 0x2e, 0x64, 0x6e, 0x73, 0x2e, 0x69, 0x6e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
-	0x1a, 0x0d, 0x2e, 0x64, 0x6e, 0x73, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x00, 0x28, 0x01, 0x30, 0x01, 0x42, 0x09, 0x5a, 0x07, 0x44, 0x6e, 0x73, 0x2f, 0x64, 0x6e, 0x73,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x02, 0x69, 0x70, 0x32, 0x3e, 0x0a, 0x0a, 0x44, 0x6e, 0x73, 0x48, 0x61, 0x6e, 0x64, 0x6c, 0x65,
+	0x72, 0x12, 0x30, 0x0a, 0x09, 0x47, 0x65, 0x74, 0x44, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x12, 0x0e,
+	0x2e, 0x64, 0x6e, 0x73, 0x2e, 0x69, 0x6e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x1a, 0x0d,
+	0x2e, 0x64, 0x6e, 0x73, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x28,
+	0x01, 0x30, 0x01, 0x42, 0x09, 0x5a, 0x07, 0x44, 0x6e, 0x73, 0x2f, 0x64, 0x6e, 0x73, 0x62, 0x06,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -152,8 +152,8 @@ var file_dns_proto_goTypes = []interface{}{
 	(*Response)(nil),  // 1: dns.response
 }
 var file_dns_proto_depIdxs = []int32{
-	0, // 0: dns.DnsHandler.GetDomainIp:input_type -> dns.inmessage
-	1, // 1: dns.DnsHandler.GetDomainIp:output_type -> dns.response
+	0, // 0: dns.DnsHandler.GetDomain:input_type -> dns.inmessage
+	1, // 1: dns.DnsHandler.GetDomain:output_type -> dns.response
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -224,7 +224,7 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type DnsHandlerClient interface {
-	GetDomainIp(ctx context.Context, opts ...grpc.CallOption) (DnsHandler_GetDomainIpClient, error)
+	GetDomain(ctx context.Context, opts ...grpc.CallOption) (DnsHandler_GetDomainClient, error)
 }
 
 type dnsHandlerClient struct {
@@ -235,30 +235,30 @@ func NewDnsHandlerClient(cc grpc.ClientConnInterface) DnsHandlerClient {
 	return &dnsHandlerClient{cc}
 }
 
-func (c *dnsHandlerClient) GetDomainIp(ctx context.Context, opts ...grpc.CallOption) (DnsHandler_GetDomainIpClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_DnsHandler_serviceDesc.Streams[0], "/dns.DnsHandler/GetDomainIp", opts...)
+func (c *dnsHandlerClient) GetDomain(ctx context.Context, opts ...grpc.CallOption) (DnsHandler_GetDomainClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_DnsHandler_serviceDesc.Streams[0], "/dns.DnsHandler/GetDomain", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &dnsHandlerGetDomainIpClient{stream}
+	x := &dnsHandlerGetDomainClient{stream}
 	return x, nil
 }
 
-type DnsHandler_GetDomainIpClient interface {
+type DnsHandler_GetDomainClient interface {
 	Send(*Inmessage) error
 	Recv() (*Response, error)
 	grpc.ClientStream
 }
 
-type dnsHandlerGetDomainIpClient struct {
+type dnsHandlerGetDomainClient struct {
 	grpc.ClientStream
 }
 
-func (x *dnsHandlerGetDomainIpClient) Send(m *Inmessage) error {
+func (x *dnsHandlerGetDomainClient) Send(m *Inmessage) error {
 	return x.ClientStream.SendMsg(m)
 }
 
-func (x *dnsHandlerGetDomainIpClient) Recv() (*Response, error) {
+func (x *dnsHandlerGetDomainClient) Recv() (*Response, error) {
 	m := new(Response)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -268,40 +268,40 @@ func (x *dnsHandlerGetDomainIpClient) Recv() (*Response, error) {
 
 // DnsHandlerServer is the server API for DnsHandler service.
 type DnsHandlerServer interface {
-	GetDomainIp(DnsHandler_GetDomainIpServer) error
+	GetDomain(DnsHandler_GetDomainServer) error
 }
 
 // UnimplementedDnsHandlerServer can be embedded to have forward compatible implementations.
 type UnimplementedDnsHandlerServer struct {
 }
 
-func (*UnimplementedDnsHandlerServer) GetDomainIp(DnsHandler_GetDomainIpServer) error {
-	return status.Errorf(codes.Unimplemented, "method GetDomainIp not implemented")
+func (*UnimplementedDnsHandlerServer) GetDomain(DnsHandler_GetDomainServer) error {
+	return status.Errorf(codes.Unimplemented, "method GetDomain not implemented")
 }
 
 func RegisterDnsHandlerServer(s *grpc.Server, srv DnsHandlerServer) {
 	s.RegisterService(&_DnsHandler_serviceDesc, srv)
 }
 
-func _DnsHandler_GetDomainIp_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(DnsHandlerServer).GetDomainIp(&dnsHandlerGetDomainIpServer{stream})
+func _DnsHandler_GetDomain_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(DnsHandlerServer).GetDomain(&dnsHandlerGetDomainServer{stream})
 }
 
-type DnsHandler_GetDomainIpServer interface {
+type DnsHandler_GetDomainServer interface {
 	Send(*Response) error
 	Recv() (*Inmessage, error)
 	grpc.ServerStream
 }
 
-type dnsHandlerGetDomainIpServer struct {
+type dnsHandlerGetDomainServer struct {
 	grpc.ServerStream
 }
 
-func (x *dnsHandlerGetDomainIpServer) Send(m *Response) error {
+func (x *dnsHandlerGetDomainServer) Send(m *Response) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func (x *dnsHandlerGetDomainIpServer) Recv() (*Inmessage, error) {
+func (x *dnsHandlerGetDomainServer) Recv() (*Inmessage, error) {
 	m := new(Inmessage)
 	if err := x.ServerStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -315,8 +315,8 @@ var _DnsHandler_serviceDesc = grpc.ServiceDesc{
 	Methods:     []grpc.MethodDesc{},
 	Streams: []grpc.StreamDesc{
 		{
-			StreamName:    "GetDomainIp",
-			Handler:       _DnsHandler_GetDomainIp_Handler,
+			StreamName:    "GetDomain",
+			Handler:       _DnsHandler_GetDomain_Handler,
 			ServerStreams: true,
 			ClientStreams: true,
 		},
