@@ -1,0 +1,25 @@
+syntax = "proto3";
+package broker;
+option go_package = "Broker/broker";
+
+service BrokerHandler {
+    rpc ConnectDomain (stream dom) returns (stream response) {}
+    rpc CreateDomain (stream domcreate) returns (stream response) {}
+    rpc DeleteDomain (stream dom) returns (stream response) {}
+    rpc UpdateDomain (stream dom) returns (stream response) {}
+}
+
+message domcreate{
+    string ip = 1;
+    string domname = 2;
+}
+
+message dom{
+    string domname = 1;
+}
+
+message response {
+    string ip = 1;
+    bool verificador = 2;
+}
+

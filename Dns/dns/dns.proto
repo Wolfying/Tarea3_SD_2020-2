@@ -1,0 +1,15 @@
+syntax = "proto3";
+package dns;
+option go_package = "Dns/dns";
+
+service DnsHandler {
+    rpc GetDomainIp (stream inmessage) returns (stream response){}
+}
+
+message inmessage{
+    string domname = 1;
+}
+
+message response {
+    string ip = 1;
+}
