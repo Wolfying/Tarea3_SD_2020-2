@@ -16,7 +16,7 @@ import (
 
 func CreateDomain(dom string) {
 	var conn *grpc.ClientConn
-	conn, err := grpc.Dial(":8180", grpc.WithInsecure())
+	conn, err := grpc.Dial("dist141:8180", grpc.WithInsecure())
 
 	if err != nil {
 		log.Fatalf("Conexion fallida: %s", err)
@@ -66,7 +66,7 @@ func CreateDomain(dom string) {
 
 func UpdateDomain(oldDom string, newDom string) {
 	var conn *grpc.ClientConn
-	conn, err := grpc.Dial(":8180", grpc.WithInsecure())
+	conn, err := grpc.Dial("dist141:8180", grpc.WithInsecure())
 
 	if err != nil {
 		log.Fatalf("Conexion fallida: %s", err)
@@ -118,7 +118,7 @@ func UpdateDomain(oldDom string, newDom string) {
 func DeleteDomain(dom string) {
 
 	var conn *grpc.ClientConn
-	conn, err := grpc.Dial(":8180", grpc.WithInsecure())
+	conn, err := grpc.Dial("dist141:8180", grpc.WithInsecure())
 
 	if err != nil {
 		log.Fatalf("Conexion fallida: %s", err)

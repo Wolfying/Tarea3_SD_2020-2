@@ -17,7 +17,7 @@ import (
 func main() {
 	var conn *grpc.ClientConn
 	var reader *bufio.Reader
-	conn, err := grpc.Dial(":8180", grpc.WithInsecure())
+	conn, err := grpc.Dial("dist141:8180", grpc.WithInsecure())
 
 	if err != nil {
 		log.Fatalf("Conexion fallida: %s", err)

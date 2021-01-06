@@ -141,6 +141,14 @@ func (*ServerDns) DeleteDomain(incomestream dns.DnsHandler_DeleteDomainServer) e
 			return err
 		}
 		_ = in
+
+		mensaje := &dns.Response{
+			Ip: "No esta implementada aun esta funcion"}
+		if err := incomestream.Send(mensaje); err != nil {
+			log.Printf("Error en propuesta  %s", err)
+			return err
+		}
+
 	}
 	return nil
 }
@@ -155,6 +163,13 @@ func (*ServerDns) UpdateDomain(incomestream dns.DnsHandler_UpdateDomainServer) e
 			return err
 		}
 		_ = in
+
+		mensaje := &dns.Response{
+			Ip: "No esta implementada aun esta funcion"}
+		if err := incomestream.Send(mensaje); err != nil {
+			log.Printf("Error en propuesta  %s", err)
+			return err
+		}
 	}
 	return nil
 }

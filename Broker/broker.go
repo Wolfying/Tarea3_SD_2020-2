@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"math/rand"
 	"net"
 	"time"
 
@@ -17,6 +18,8 @@ import (
 type ServerBroker struct {
 	name string
 }
+
+var ips []string = []string{"dist142:8181", "dist143:8181", "dist144:8181"}
 
 // ConnectDomain ...
 func (*ServerBroker) ConnectDomain(incomestream broker.BrokerHandler_ConnectDomainServer) error {
@@ -76,7 +79,10 @@ func (*ServerBroker) CreateDomain(incomestream broker.BrokerHandler_CreateDomain
 }
 func DnsCreateDomain(dom string) bool {
 	var conn *grpc.ClientConn
-	conn, err := grpc.Dial(":8181", grpc.WithInsecure())
+	rand.Seed(time.Now().Unix()) // initialize global pseudo random generator
+	ip := fmt.Sprint("Gonna work from home...", ips[rand.Intn(len(ips))])
+
+	conn, err := grpc.Dial(ip, grpc.WithInsecure())
 
 	if err != nil {
 		log.Fatalf("Conexion fallida: %s", err)
@@ -160,7 +166,10 @@ func (*ServerBroker) DeleteDomain(incomestream broker.BrokerHandler_DeleteDomain
 
 func DnsDeleteDomain(dom string) bool {
 	var conn *grpc.ClientConn
-	conn, err := grpc.Dial(":8181", grpc.WithInsecure())
+	rand.Seed(time.Now().Unix()) // initialize global pseudo random generator
+	ip := fmt.Sprint("Gonna work from home...", ips[rand.Intn(len(ips))])
+
+	conn, err := grpc.Dial(ip, grpc.WithInsecure())
 
 	if err != nil {
 		log.Fatalf("Conexion fallida: %s", err)
@@ -243,7 +252,11 @@ func (*ServerBroker) UpdateDomain(incomestream broker.BrokerHandler_UpdateDomain
 
 func DnsUpdateDomain(oldDom string, newDom string) bool {
 	var conn *grpc.ClientConn
-	conn, err := grpc.Dial(":8181", grpc.WithInsecure())
+
+	rand.Seed(time.Now().Unix()) // initialize global pseudo random generator
+	ip := fmt.Sprint("Gonna work from home...", ips[rand.Intn(len(ips))])
+
+	conn, err := grpc.Dial(ip, grpc.WithInsecure())
 
 	if err != nil {
 		log.Fatalf("Conexion fallida: %s", err)
@@ -297,7 +310,10 @@ func DnsUpdateDomain(oldDom string, newDom string) bool {
 
 func askDomainDns(domain string) string {
 	var conn *grpc.ClientConn
-	conn, err := grpc.Dial(":8181", grpc.WithInsecure())
+	rand.Seed(time.Now().Unix()) // initialize global pseudo random generator
+	ip := fmt.Sprint("Gonna work from home...", ips[rand.Intn(len(ips))])
+
+	conn, err := grpc.Dial(ip, grpc.WithInsecure())
 
 	if err != nil {
 		log.Fatalf("Conexion fallida: %s", err)
