@@ -24,6 +24,163 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type Domcreate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Ip      string `protobuf:"bytes,1,opt,name=ip,proto3" json:"ip,omitempty"`
+	Domname string `protobuf:"bytes,2,opt,name=domname,proto3" json:"domname,omitempty"`
+}
+
+func (x *Domcreate) Reset() {
+	*x = Domcreate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_dns_proto_msgTypes[0]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Domcreate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Domcreate) ProtoMessage() {}
+
+func (x *Domcreate) ProtoReflect() protoreflect.Message {
+	mi := &file_dns_proto_msgTypes[0]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Domcreate.ProtoReflect.Descriptor instead.
+func (*Domcreate) Descriptor() ([]byte, []int) {
+	return file_dns_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *Domcreate) GetIp() string {
+	if x != nil {
+		return x.Ip
+	}
+	return ""
+}
+
+func (x *Domcreate) GetDomname() string {
+	if x != nil {
+		return x.Domname
+	}
+	return ""
+}
+
+type Dom struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Domname string `protobuf:"bytes,1,opt,name=domname,proto3" json:"domname,omitempty"`
+}
+
+func (x *Dom) Reset() {
+	*x = Dom{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_dns_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Dom) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Dom) ProtoMessage() {}
+
+func (x *Dom) ProtoReflect() protoreflect.Message {
+	mi := &file_dns_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Dom.ProtoReflect.Descriptor instead.
+func (*Dom) Descriptor() ([]byte, []int) {
+	return file_dns_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *Dom) GetDomname() string {
+	if x != nil {
+		return x.Domname
+	}
+	return ""
+}
+
+type DomUpdate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	OldDom string `protobuf:"bytes,1,opt,name=oldDom,proto3" json:"oldDom,omitempty"`
+	NewDom string `protobuf:"bytes,2,opt,name=newDom,proto3" json:"newDom,omitempty"`
+}
+
+func (x *DomUpdate) Reset() {
+	*x = DomUpdate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_dns_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DomUpdate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DomUpdate) ProtoMessage() {}
+
+func (x *DomUpdate) ProtoReflect() protoreflect.Message {
+	mi := &file_dns_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DomUpdate.ProtoReflect.Descriptor instead.
+func (*DomUpdate) Descriptor() ([]byte, []int) {
+	return file_dns_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *DomUpdate) GetOldDom() string {
+	if x != nil {
+		return x.OldDom
+	}
+	return ""
+}
+
+func (x *DomUpdate) GetNewDom() string {
+	if x != nil {
+		return x.NewDom
+	}
+	return ""
+}
+
 type Inmessage struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -35,7 +192,7 @@ type Inmessage struct {
 func (x *Inmessage) Reset() {
 	*x = Inmessage{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_dns_proto_msgTypes[0]
+		mi := &file_dns_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -48,7 +205,7 @@ func (x *Inmessage) String() string {
 func (*Inmessage) ProtoMessage() {}
 
 func (x *Inmessage) ProtoReflect() protoreflect.Message {
-	mi := &file_dns_proto_msgTypes[0]
+	mi := &file_dns_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -61,7 +218,7 @@ func (x *Inmessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Inmessage.ProtoReflect.Descriptor instead.
 func (*Inmessage) Descriptor() ([]byte, []int) {
-	return file_dns_proto_rawDescGZIP(), []int{0}
+	return file_dns_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Inmessage) GetDomname() string {
@@ -82,7 +239,7 @@ type Response struct {
 func (x *Response) Reset() {
 	*x = Response{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_dns_proto_msgTypes[1]
+		mi := &file_dns_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -95,7 +252,7 @@ func (x *Response) String() string {
 func (*Response) ProtoMessage() {}
 
 func (x *Response) ProtoReflect() protoreflect.Message {
-	mi := &file_dns_proto_msgTypes[1]
+	mi := &file_dns_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -108,7 +265,7 @@ func (x *Response) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Response.ProtoReflect.Descriptor instead.
 func (*Response) Descriptor() ([]byte, []int) {
-	return file_dns_proto_rawDescGZIP(), []int{1}
+	return file_dns_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *Response) GetIp() string {
@@ -122,16 +279,35 @@ var File_dns_proto protoreflect.FileDescriptor
 
 var file_dns_proto_rawDesc = []byte{
 	0x0a, 0x09, 0x64, 0x6e, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x03, 0x64, 0x6e, 0x73,
-	0x22, 0x25, 0x0a, 0x09, 0x69, 0x6e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x18, 0x0a,
-	0x07, 0x64, 0x6f, 0x6d, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
-	0x64, 0x6f, 0x6d, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x1a, 0x0a, 0x08, 0x72, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x70, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x02, 0x69, 0x70, 0x32, 0x3e, 0x0a, 0x0a, 0x44, 0x6e, 0x73, 0x48, 0x61, 0x6e, 0x64, 0x6c, 0x65,
-	0x72, 0x12, 0x30, 0x0a, 0x09, 0x47, 0x65, 0x74, 0x44, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x12, 0x0e,
-	0x2e, 0x64, 0x6e, 0x73, 0x2e, 0x69, 0x6e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x1a, 0x0d,
-	0x2e, 0x64, 0x6e, 0x73, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x28,
-	0x01, 0x30, 0x01, 0x42, 0x09, 0x5a, 0x07, 0x44, 0x6e, 0x73, 0x2f, 0x64, 0x6e, 0x73, 0x62, 0x06,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x22, 0x35, 0x0a, 0x09, 0x64, 0x6f, 0x6d, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x0e, 0x0a,
+	0x02, 0x69, 0x70, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x70, 0x12, 0x18, 0x0a,
+	0x07, 0x64, 0x6f, 0x6d, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
+	0x64, 0x6f, 0x6d, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x1f, 0x0a, 0x03, 0x64, 0x6f, 0x6d, 0x12, 0x18,
+	0x0a, 0x07, 0x64, 0x6f, 0x6d, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x07, 0x64, 0x6f, 0x6d, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x3b, 0x0a, 0x09, 0x64, 0x6f, 0x6d, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x6c, 0x64, 0x44, 0x6f, 0x6d, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6f, 0x6c, 0x64, 0x44, 0x6f, 0x6d, 0x12, 0x16, 0x0a,
+	0x06, 0x6e, 0x65, 0x77, 0x44, 0x6f, 0x6d, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6e,
+	0x65, 0x77, 0x44, 0x6f, 0x6d, 0x22, 0x25, 0x0a, 0x09, 0x69, 0x6e, 0x6d, 0x65, 0x73, 0x73, 0x61,
+	0x67, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x64, 0x6f, 0x6d, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x07, 0x64, 0x6f, 0x6d, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x1a, 0x0a, 0x08,
+	0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x70, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x70, 0x32, 0xd7, 0x01, 0x0a, 0x0a, 0x44, 0x6e, 0x73,
+	0x48, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x72, 0x12, 0x30, 0x0a, 0x09, 0x47, 0x65, 0x74, 0x44, 0x6f,
+	0x6d, 0x61, 0x69, 0x6e, 0x12, 0x0e, 0x2e, 0x64, 0x6e, 0x73, 0x2e, 0x69, 0x6e, 0x6d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x1a, 0x0d, 0x2e, 0x64, 0x6e, 0x73, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x28, 0x01, 0x30, 0x01, 0x12, 0x33, 0x0a, 0x0c, 0x43, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x44, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x12, 0x0e, 0x2e, 0x64, 0x6e, 0x73, 0x2e,
+	0x64, 0x6f, 0x6d, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x1a, 0x0d, 0x2e, 0x64, 0x6e, 0x73, 0x2e,
+	0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x28, 0x01, 0x30, 0x01, 0x12, 0x2d,
+	0x0a, 0x0c, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x44, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x12, 0x08,
+	0x2e, 0x64, 0x6e, 0x73, 0x2e, 0x64, 0x6f, 0x6d, 0x1a, 0x0d, 0x2e, 0x64, 0x6e, 0x73, 0x2e, 0x72,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x28, 0x01, 0x30, 0x01, 0x12, 0x33, 0x0a,
+	0x0c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x44, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x12, 0x0e, 0x2e,
+	0x64, 0x6e, 0x73, 0x2e, 0x64, 0x6f, 0x6d, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x1a, 0x0d, 0x2e,
+	0x64, 0x6e, 0x73, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x28, 0x01,
+	0x30, 0x01, 0x42, 0x09, 0x5a, 0x07, 0x44, 0x6e, 0x73, 0x2f, 0x64, 0x6e, 0x73, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -146,16 +322,25 @@ func file_dns_proto_rawDescGZIP() []byte {
 	return file_dns_proto_rawDescData
 }
 
-var file_dns_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_dns_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_dns_proto_goTypes = []interface{}{
-	(*Inmessage)(nil), // 0: dns.inmessage
-	(*Response)(nil),  // 1: dns.response
+	(*Domcreate)(nil), // 0: dns.domcreate
+	(*Dom)(nil),       // 1: dns.dom
+	(*DomUpdate)(nil), // 2: dns.domUpdate
+	(*Inmessage)(nil), // 3: dns.inmessage
+	(*Response)(nil),  // 4: dns.response
 }
 var file_dns_proto_depIdxs = []int32{
-	0, // 0: dns.DnsHandler.GetDomain:input_type -> dns.inmessage
-	1, // 1: dns.DnsHandler.GetDomain:output_type -> dns.response
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
+	3, // 0: dns.DnsHandler.GetDomain:input_type -> dns.inmessage
+	0, // 1: dns.DnsHandler.CreateDomain:input_type -> dns.domcreate
+	1, // 2: dns.DnsHandler.DeleteDomain:input_type -> dns.dom
+	2, // 3: dns.DnsHandler.UpdateDomain:input_type -> dns.domUpdate
+	4, // 4: dns.DnsHandler.GetDomain:output_type -> dns.response
+	4, // 5: dns.DnsHandler.CreateDomain:output_type -> dns.response
+	4, // 6: dns.DnsHandler.DeleteDomain:output_type -> dns.response
+	4, // 7: dns.DnsHandler.UpdateDomain:output_type -> dns.response
+	4, // [4:8] is the sub-list for method output_type
+	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -168,7 +353,7 @@ func file_dns_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_dns_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Inmessage); i {
+			switch v := v.(*Domcreate); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -180,6 +365,42 @@ func file_dns_proto_init() {
 			}
 		}
 		file_dns_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Dom); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_dns_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DomUpdate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_dns_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Inmessage); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_dns_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Response); i {
 			case 0:
 				return &v.state
@@ -198,7 +419,7 @@ func file_dns_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_dns_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -225,6 +446,9 @@ const _ = grpc.SupportPackageIsVersion6
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type DnsHandlerClient interface {
 	GetDomain(ctx context.Context, opts ...grpc.CallOption) (DnsHandler_GetDomainClient, error)
+	CreateDomain(ctx context.Context, opts ...grpc.CallOption) (DnsHandler_CreateDomainClient, error)
+	DeleteDomain(ctx context.Context, opts ...grpc.CallOption) (DnsHandler_DeleteDomainClient, error)
+	UpdateDomain(ctx context.Context, opts ...grpc.CallOption) (DnsHandler_UpdateDomainClient, error)
 }
 
 type dnsHandlerClient struct {
@@ -266,9 +490,105 @@ func (x *dnsHandlerGetDomainClient) Recv() (*Response, error) {
 	return m, nil
 }
 
+func (c *dnsHandlerClient) CreateDomain(ctx context.Context, opts ...grpc.CallOption) (DnsHandler_CreateDomainClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_DnsHandler_serviceDesc.Streams[1], "/dns.DnsHandler/CreateDomain", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &dnsHandlerCreateDomainClient{stream}
+	return x, nil
+}
+
+type DnsHandler_CreateDomainClient interface {
+	Send(*Domcreate) error
+	Recv() (*Response, error)
+	grpc.ClientStream
+}
+
+type dnsHandlerCreateDomainClient struct {
+	grpc.ClientStream
+}
+
+func (x *dnsHandlerCreateDomainClient) Send(m *Domcreate) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *dnsHandlerCreateDomainClient) Recv() (*Response, error) {
+	m := new(Response)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func (c *dnsHandlerClient) DeleteDomain(ctx context.Context, opts ...grpc.CallOption) (DnsHandler_DeleteDomainClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_DnsHandler_serviceDesc.Streams[2], "/dns.DnsHandler/DeleteDomain", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &dnsHandlerDeleteDomainClient{stream}
+	return x, nil
+}
+
+type DnsHandler_DeleteDomainClient interface {
+	Send(*Dom) error
+	Recv() (*Response, error)
+	grpc.ClientStream
+}
+
+type dnsHandlerDeleteDomainClient struct {
+	grpc.ClientStream
+}
+
+func (x *dnsHandlerDeleteDomainClient) Send(m *Dom) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *dnsHandlerDeleteDomainClient) Recv() (*Response, error) {
+	m := new(Response)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func (c *dnsHandlerClient) UpdateDomain(ctx context.Context, opts ...grpc.CallOption) (DnsHandler_UpdateDomainClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_DnsHandler_serviceDesc.Streams[3], "/dns.DnsHandler/UpdateDomain", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &dnsHandlerUpdateDomainClient{stream}
+	return x, nil
+}
+
+type DnsHandler_UpdateDomainClient interface {
+	Send(*DomUpdate) error
+	Recv() (*Response, error)
+	grpc.ClientStream
+}
+
+type dnsHandlerUpdateDomainClient struct {
+	grpc.ClientStream
+}
+
+func (x *dnsHandlerUpdateDomainClient) Send(m *DomUpdate) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *dnsHandlerUpdateDomainClient) Recv() (*Response, error) {
+	m := new(Response)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // DnsHandlerServer is the server API for DnsHandler service.
 type DnsHandlerServer interface {
 	GetDomain(DnsHandler_GetDomainServer) error
+	CreateDomain(DnsHandler_CreateDomainServer) error
+	DeleteDomain(DnsHandler_DeleteDomainServer) error
+	UpdateDomain(DnsHandler_UpdateDomainServer) error
 }
 
 // UnimplementedDnsHandlerServer can be embedded to have forward compatible implementations.
@@ -277,6 +597,15 @@ type UnimplementedDnsHandlerServer struct {
 
 func (*UnimplementedDnsHandlerServer) GetDomain(DnsHandler_GetDomainServer) error {
 	return status.Errorf(codes.Unimplemented, "method GetDomain not implemented")
+}
+func (*UnimplementedDnsHandlerServer) CreateDomain(DnsHandler_CreateDomainServer) error {
+	return status.Errorf(codes.Unimplemented, "method CreateDomain not implemented")
+}
+func (*UnimplementedDnsHandlerServer) DeleteDomain(DnsHandler_DeleteDomainServer) error {
+	return status.Errorf(codes.Unimplemented, "method DeleteDomain not implemented")
+}
+func (*UnimplementedDnsHandlerServer) UpdateDomain(DnsHandler_UpdateDomainServer) error {
+	return status.Errorf(codes.Unimplemented, "method UpdateDomain not implemented")
 }
 
 func RegisterDnsHandlerServer(s *grpc.Server, srv DnsHandlerServer) {
@@ -309,6 +638,84 @@ func (x *dnsHandlerGetDomainServer) Recv() (*Inmessage, error) {
 	return m, nil
 }
 
+func _DnsHandler_CreateDomain_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(DnsHandlerServer).CreateDomain(&dnsHandlerCreateDomainServer{stream})
+}
+
+type DnsHandler_CreateDomainServer interface {
+	Send(*Response) error
+	Recv() (*Domcreate, error)
+	grpc.ServerStream
+}
+
+type dnsHandlerCreateDomainServer struct {
+	grpc.ServerStream
+}
+
+func (x *dnsHandlerCreateDomainServer) Send(m *Response) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *dnsHandlerCreateDomainServer) Recv() (*Domcreate, error) {
+	m := new(Domcreate)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func _DnsHandler_DeleteDomain_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(DnsHandlerServer).DeleteDomain(&dnsHandlerDeleteDomainServer{stream})
+}
+
+type DnsHandler_DeleteDomainServer interface {
+	Send(*Response) error
+	Recv() (*Dom, error)
+	grpc.ServerStream
+}
+
+type dnsHandlerDeleteDomainServer struct {
+	grpc.ServerStream
+}
+
+func (x *dnsHandlerDeleteDomainServer) Send(m *Response) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *dnsHandlerDeleteDomainServer) Recv() (*Dom, error) {
+	m := new(Dom)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func _DnsHandler_UpdateDomain_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(DnsHandlerServer).UpdateDomain(&dnsHandlerUpdateDomainServer{stream})
+}
+
+type DnsHandler_UpdateDomainServer interface {
+	Send(*Response) error
+	Recv() (*DomUpdate, error)
+	grpc.ServerStream
+}
+
+type dnsHandlerUpdateDomainServer struct {
+	grpc.ServerStream
+}
+
+func (x *dnsHandlerUpdateDomainServer) Send(m *Response) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *dnsHandlerUpdateDomainServer) Recv() (*DomUpdate, error) {
+	m := new(DomUpdate)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 var _DnsHandler_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "dns.DnsHandler",
 	HandlerType: (*DnsHandlerServer)(nil),
@@ -317,6 +724,24 @@ var _DnsHandler_serviceDesc = grpc.ServiceDesc{
 		{
 			StreamName:    "GetDomain",
 			Handler:       _DnsHandler_GetDomain_Handler,
+			ServerStreams: true,
+			ClientStreams: true,
+		},
+		{
+			StreamName:    "CreateDomain",
+			Handler:       _DnsHandler_CreateDomain_Handler,
+			ServerStreams: true,
+			ClientStreams: true,
+		},
+		{
+			StreamName:    "DeleteDomain",
+			Handler:       _DnsHandler_DeleteDomain_Handler,
+			ServerStreams: true,
+			ClientStreams: true,
+		},
+		{
+			StreamName:    "UpdateDomain",
+			Handler:       _DnsHandler_UpdateDomain_Handler,
 			ServerStreams: true,
 			ClientStreams: true,
 		},

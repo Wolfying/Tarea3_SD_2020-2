@@ -87,6 +87,78 @@ func (*ServerDns) GetDomain(incomestream dns.DnsHandler_GetDomainServer) error {
 	return nil
 }
 
+func (*ServerDns) CreateDomain(incomestream dns.DnsHandler_CreateDomainServer) error {
+	for {
+		in, err := incomestream.Recv()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			log.Printf("imprimo algo antes de return err: %v", err)
+			return err
+		}
+		_ = in
+
+		domain := in.Domname
+		ip := in.Ip
+		cosa := domain + " IN A " + ip
+		archivo := "log.txt"
+		file, err := os.OpenFile(archivo, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+		if err != nil {
+			log.Fatalf("Error creando el archivo: %s", err)
+			mensaje := &dns.Response{
+				Ip: err.Error()}
+			if err := incomestream.Send(mensaje); err != nil {
+				log.Printf("Error en propuesta  %s", err)
+				return err
+			}
+		}
+
+		datawriter := bufio.NewWriter(file)
+		_, _ = datawriter.WriteString(cosa + "\n")
+
+		datawriter.Flush()
+		file.Close()
+
+		mensaje := &dns.Response{
+			Ip: ip}
+		if err := incomestream.Send(mensaje); err != nil {
+			log.Printf("Error en propuesta  %s", err)
+			return err
+		}
+
+	}
+	return nil
+}
+func (*ServerDns) DeleteDomain(incomestream dns.DnsHandler_DeleteDomainServer) error {
+	for {
+		in, err := incomestream.Recv()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			log.Printf("imprimo algo antes de return err: %v", err)
+			return err
+		}
+		_ = in
+	}
+	return nil
+}
+func (*ServerDns) UpdateDomain(incomestream dns.DnsHandler_UpdateDomainServer) error {
+	for {
+		in, err := incomestream.Recv()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			log.Printf("imprimo algo antes de return err: %v", err)
+			return err
+		}
+		_ = in
+	}
+	return nil
+}
+
 func main() {
 	server := ServerDns{}
 	puerto := ":8181"
