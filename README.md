@@ -5,6 +5,10 @@ Integrante:
 -   Andrés Herera
     ROL: 201473593-6
 
+Broker en dist141
+Dns's en dist142, dist143, dist144
+
+
 
 Cliente no cierra solo la conexion, cerrar con ctrl+c
 No hay merge entre los servidores DNS, no se pudo :c
