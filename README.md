@@ -7,3 +7,7 @@ Integrante:
 
 
 Cliente no cierra solo la conexion, cerrar con ctrl+c
+No hay merge entre los servidores DNS, no se pudo :c
+No hay reloj de vector.
+Servidores reciben comandos, pero solo se puede crear un dominio.
+Cliente si puede solicitar la ip perteneciente a un dominio.

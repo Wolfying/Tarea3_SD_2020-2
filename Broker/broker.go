@@ -223,7 +223,7 @@ func (*ServerBroker) UpdateDomain(incomestream broker.BrokerHandler_UpdateDomain
 		}
 		_ = in
 		var mensaje *broker.Response
-		if DnsUpdateDomain(in.Domname, in.Domname) {
+		if DnsUpdateDomain(in.OldDom, in.NewDom) {
 			mensaje = &broker.Response{
 				Ip: "Dominio actualizado con exito",
 			}

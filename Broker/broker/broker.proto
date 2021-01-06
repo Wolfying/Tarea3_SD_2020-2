@@ -6,12 +6,17 @@ service BrokerHandler {
     rpc ConnectDomain (stream dom) returns (stream response) {}
     rpc CreateDomain (stream domcreate) returns (stream response) {}
     rpc DeleteDomain (stream dom) returns (stream response) {}
-    rpc UpdateDomain (stream dom) returns (stream response) {}
+    rpc UpdateDomain (stream domUpdate) returns (stream response) {}
 }
 
 message domcreate{
     string ip = 1;
     string domname = 2;
+}
+
+message domUpdate{
+    string oldDom = 1;
+    string newDom = 2;
 }
 
 message dom{
