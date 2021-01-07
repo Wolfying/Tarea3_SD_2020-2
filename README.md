@@ -8,7 +8,13 @@ Integrante:
 Broker en dist141
 Dns's en dist142, dist143, dist144
 
+Ejecutar siguiente comando en todas las maquinas antes de ejecutar programas:
+export PATH="$PATH:$(go env GOPATH)/bin" >> ~/.bashrc
 
+make runBroker
+make runDns
+make runClient
+make runAdmin
 
 Cliente no cierra solo la conexion, cerrar con ctrl+c
 No hay merge entre los servidores DNS, no se pudo :c

@@ -80,7 +80,7 @@ func (*ServerBroker) CreateDomain(incomestream broker.BrokerHandler_CreateDomain
 func DnsCreateDomain(dom string) bool {
 	var conn *grpc.ClientConn
 	rand.Seed(time.Now().Unix()) // initialize global pseudo random generator
-	ip := fmt.Sprint("Gonna work from home...", ips[rand.Intn(len(ips))])
+	ip := ips[rand.Intn(len(ips))]
 
 	conn, err := grpc.Dial(ip, grpc.WithInsecure())
 
@@ -167,7 +167,7 @@ func (*ServerBroker) DeleteDomain(incomestream broker.BrokerHandler_DeleteDomain
 func DnsDeleteDomain(dom string) bool {
 	var conn *grpc.ClientConn
 	rand.Seed(time.Now().Unix()) // initialize global pseudo random generator
-	ip := fmt.Sprint("Gonna work from home...", ips[rand.Intn(len(ips))])
+	ip := ips[rand.Intn(len(ips))]
 
 	conn, err := grpc.Dial(ip, grpc.WithInsecure())
 
@@ -254,7 +254,7 @@ func DnsUpdateDomain(oldDom string, newDom string) bool {
 	var conn *grpc.ClientConn
 
 	rand.Seed(time.Now().Unix()) // initialize global pseudo random generator
-	ip := fmt.Sprint("Gonna work from home...", ips[rand.Intn(len(ips))])
+	ip := ips[rand.Intn(len(ips))]
 
 	conn, err := grpc.Dial(ip, grpc.WithInsecure())
 
@@ -311,7 +311,7 @@ func DnsUpdateDomain(oldDom string, newDom string) bool {
 func askDomainDns(domain string) string {
 	var conn *grpc.ClientConn
 	rand.Seed(time.Now().Unix()) // initialize global pseudo random generator
-	ip := fmt.Sprint("Gonna work from home...", ips[rand.Intn(len(ips))])
+	ip := ips[rand.Intn(len(ips))]
 
 	conn, err := grpc.Dial(ip, grpc.WithInsecure())
 

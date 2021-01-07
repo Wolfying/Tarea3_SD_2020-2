@@ -1,6 +1,5 @@
 #················································Broker·························································
 runBroker:
-	rm -f log.txt
 	protoc -I Broker/broker Broker/broker/broker.proto --go_out=plugins=grpc:./
 	go run Broker/broker.go
 
