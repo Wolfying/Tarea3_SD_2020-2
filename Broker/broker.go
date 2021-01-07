@@ -59,6 +59,8 @@ func (*ServerBroker) CreateDomain(incomestream broker.BrokerHandler_CreateDomain
 			return err
 		}
 		_ = in
+
+		log.Printf("Se recibe solicitud de cración para el dominio: %s", in.Domname)
 		var mensaje *broker.Response
 		if DnsCreateDomain(in.Domname) {
 			mensaje = &broker.Response{
@@ -144,6 +146,7 @@ func (*ServerBroker) DeleteDomain(incomestream broker.BrokerHandler_DeleteDomain
 			return err
 		}
 		_ = in
+		log.Printf("Se recibe solicitud de eliminacion para el dominio: %s", in.Domname)
 
 		var mensaje *broker.Response
 		if DnsDeleteDomain(in.Domname) {
@@ -231,6 +234,7 @@ func (*ServerBroker) UpdateDomain(incomestream broker.BrokerHandler_UpdateDomain
 			return err
 		}
 		_ = in
+		log.Printf("Se recibe solicitud de actualizacion para el dominio: %s -> %s", in.OldDom, in.NewDom)
 		var mensaje *broker.Response
 		if DnsUpdateDomain(in.OldDom, in.NewDom) {
 			mensaje = &broker.Response{

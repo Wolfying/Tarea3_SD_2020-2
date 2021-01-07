@@ -49,6 +49,8 @@ func (*ServerDns) GetDomain(incomestream dns.DnsHandler_GetDomainServer) error {
 			return err
 		}
 		// _ = in
+
+		log.Printf("Se recibe solicitud de obtencion de ip para el dominio: %s", in.Domname)
 		domcompare := in.Domname
 		archivo := "ZF.txt"
 		file, err := os.OpenFile(archivo, os.O_RDONLY, 0644)
@@ -99,6 +101,8 @@ func (*ServerDns) CreateDomain(incomestream dns.DnsHandler_CreateDomainServer) e
 		}
 		_ = in
 
+		log.Printf("Se recibe solicitud de cración para el dominio: %s", in.Domname)
+
 		domain := in.Domname
 		ip := in.Ip
 		cosa := domain + " IN A " + ip
@@ -141,6 +145,7 @@ func (*ServerDns) DeleteDomain(incomestream dns.DnsHandler_DeleteDomainServer) e
 			return err
 		}
 		_ = in
+		log.Printf("Se recibe solicitud de eliminacion para el dominio: %s", in.Domname)
 
 		mensaje := &dns.Response{
 			Ip: "No esta implementada aun esta funcion"}
@@ -163,6 +168,7 @@ func (*ServerDns) UpdateDomain(incomestream dns.DnsHandler_UpdateDomainServer) e
 			return err
 		}
 		_ = in
+		log.Printf("Se recibe solicitud de actualizacion para el dominio: %s -> %s", in.OldDom, in.NewDom)
 
 		mensaje := &dns.Response{
 			Ip: "No esta implementada aun esta funcion"}
