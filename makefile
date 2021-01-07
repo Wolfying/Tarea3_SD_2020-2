@@ -22,7 +22,7 @@ runCliente:
 #················································Admin·························································
 runAdmin:
 	protoc -I Admin/admin Admin/admin/admin.proto --go_out=plugins=grpc:./
-	go run Admin/admin.go
+	go run Admin/main.go
 
 compileAdmin:
  	protoc -I Admin/admin Admin/admin/admin.proto --go_out=plugins=grpc:./
